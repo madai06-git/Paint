@@ -23,7 +23,7 @@ body {
 .canvasno {
   width: 20%; /* Ancho del panel de herramientas */
   padding: 20px;
-  background-color: #fff; /* Color de fondo del panel de herramientas */
+  background-color: #f0f0f0; /* Color de fondo del panel de herramientas */
 }
 
 /* Estilos de las figuras y botones */
@@ -32,6 +32,7 @@ body {
   flex-direction: column; /* Cambiado a columna para alinear verticalmente */
   align-items: flex-start; /* Alinear al inicio */
   margin-bottom: 20px;
+ /* border: 1px solid #000;*/
 }
 
 /* Estilos específicos de las imágenes de figuras */
@@ -40,6 +41,7 @@ body {
   width: 50px; /* Tamaño deseado para todas las imágenes */
   height: auto;
   margin-bottom: 10px;
+  border: 1px solid #000;
 }
 
 
@@ -69,7 +71,7 @@ body {
 .dropdown-content {
   display: none; /* Ocultar el contenido por defecto */
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: white;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -77,7 +79,7 @@ body {
 
 /* Estilos de los elementos del dropdown */
 .dropdown-content button, .dropdown-content label {
-  color: black;
+  color: rgb(22, 160, 202);
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -95,10 +97,10 @@ body {
 
 /* Resto del CSS sigue igual */
 .dropbtn {
-  background-color: #4CAF50; /* Color del botón de opciones */
+  background-color: #04d1b6; /* Color del botón de opciones */
   color: white;
   padding: 10px;
-  font-size: 16px;
+  font-size: 18px;
   border: none;
   cursor: pointer;
 }
@@ -169,9 +171,9 @@ body {
   align-items: center; /* Centrar verticalmente */
   position: absolute; /* Establecer posición absoluta */
   top: 0; /* Colocar en la parte superior */
-  left: 0; /* Alinear a la izquierda */
-  padding: 10px; /* Ajustar el relleno según sea necesario */
-  background-color: #fff; /* Color de fondo */
+  left: 40%; /* Alinear a la izquierda */
+  padding: 1px; /* Ajustar el relleno según sea necesario */
+  background-color: #f0f0f0; /* Color de fondo */
   z-index: 0; /* Asegurar que esté detrás de .dropdown */
 }
 
@@ -179,7 +181,9 @@ body {
 .traer img {
   width: 50px;
   height: auto;
-  margin-right: 10px; /* Espacio entre los botones de traer */
+  margin-right: 4px; /* Espacio entre los botones de traer */
+  border: 1px solid #000;
+
 }
 
 /* Estilos del canvas */
@@ -194,4 +198,5 @@ canvas {
 .canvas img {
   width: 50px;
   height: auto;
+  border: 1px solid #000;
 }

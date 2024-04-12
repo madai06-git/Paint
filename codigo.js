@@ -462,7 +462,7 @@ const toJPG = document.getElementById('toJPG');
 document.getElementById('exportarBtn').addEventListener('click', function() {
     anguloRotacion = 0;
     rotar=false;
-    const opcion = prompt("¿Desea exportar como PNG o como PDF? (Ingrese 'png' o 'pdf' o 'jpg)");
+    const opcion = prompt("¿Desea exportar como PDF o como PNG? (Ingrese 'pdf' o 'png')");
 
     if (opcion === 'png') {
         exportarCanvas('png');
@@ -480,7 +480,7 @@ function exportarComoPDF() {
     const width = pdf.internal.pageSize.getWidth();
     const height = pdf.internal.pageSize.getHeight();
     pdf.addImage(canvasDataURL, 'PNG', 0, 0, width, height);
-    pdf.save('canvas_export.pdf');
+    pdf.save('documento-canvas.pdf');
 }
 
 function genPDF() {
@@ -494,9 +494,9 @@ function genPDF() {
         quality:1
     });
     doc.addImage(dataURI,"PNG",0,0);
-    doc.save("Midocumento.pdf")
+    doc.save("imagen-canvas.pdf")
 }
-function preguntarFormatoExportacion() {
+/*function preguntarFormatoExportacion() {
     const opcion = prompt("¿Desea exportar como PNG o como PDF? (Ingrese 'png' o 'pdf')");
 
     if (opcion === 'png') {
@@ -506,7 +506,7 @@ function preguntarFormatoExportacion() {
     } else {
         console.error('Formato de exportación no válido');
     }
-}
+}*/
 // Obtener referencia a los elementos del menú desplegable
 const opcionesBtn = document.getElementById('opcionesBtn');
 const opcionesContent = document.getElementById('opcionesContent');
@@ -626,7 +626,6 @@ document.getElementById('dibujarRomboBtn').addEventListener('click', function() 
     dibujarLineaDDA(rotatedVertices[3][0], rotatedVertices[3][1], rotatedVertices[0][0], rotatedVertices[0][1], color, size); // Lado izquierdo
 }
 
-
 document.getElementById('dibujarTrapecioBtn').addEventListener('click', function() {
     trasladar=false;
 
@@ -680,7 +679,6 @@ document.getElementById('dibujarTrapecioBtn').addEventListener('click', function
     dibujarLineaDDA(rotatedBottomLeft.x, rotatedBottomLeft.y, rotatedTopLeft.x, rotatedTopLeft.y, color, size);
 }
 
-
 // Función para rotar un punto alrededor de otro punto de referencia
 function rotatePoint(x, y, centerX, centerY, angle) {
     var newX = (x - centerX) * Math.cos(angle) - (y - centerY) * Math.sin(angle) + centerX;
@@ -688,8 +686,6 @@ function rotatePoint(x, y, centerX, centerY, angle) {
     return { x: newX, y: newY };
    
 }
-
-
 
 document.getElementById('verdeBtn').addEventListener('click', function() {
    color=[0, 255, 0];
@@ -907,11 +903,6 @@ function drawPixel2(x, y, rgbColor, size) {
 canvas.addEventListener("mousemove", function(event) {
     console.log(figuraSeleccionada);
     console.log(resizing);
-   /* if(dibujarBtn){
-        drawPixel(endX,endY, color,size); 
-        anguloRotacion = 0;
-        rotar=false;
-    }*/
     if(dibujarBtn){
          // Obtener las coordenadas actuales del ratón
         const x = event.offsetX;
@@ -1452,40 +1443,6 @@ function dibujarLineaDDARotar(x0, y0, x1, y1, color, size, anguloRotacion, trasl
         y += yIncrement;
     }
 }
-/*
-function dibujarCuadrado(centerX, centerY, sideLength, color, size, anguloRotacion, traslacionX, traslacionY) {
-    const halfLength = sideLength / 2;
-
-    // Calcular los vértices del cuadrado sin rotación
-    const vertices = [
-        [centerX - halfLength, centerY - halfLength], // Punto superior izquierdo (A)
-        [centerX + halfLength, centerY - halfLength], // Punto superior derecho (B)
-        [centerX + halfLength, centerY + halfLength], // Punto inferior derecho (C)
-        [centerX - halfLength, centerY + halfLength]  // Punto inferior izquierdo (D)
-    ];
-
-    // Aplicar la rotación a cada vértice si no está en modo de traslación
-    let rotatedVertices = vertices;
-    if (!trasladar) {
-        rotatedVertices = vertices.map(vertex => rotatePoint(vertex[0], vertex[1], centerX, centerY, anguloRotacion));
-    } else {
-        anguloRotacion = 0; // Establecer el ángulo de rotación a cero cuando se traslada
-    }
-
-    // Aplicar la traslación a cada vértice rotado si no está en modo de traslación
-    if (!trasladar) {
-        rotatedVertices = rotatedVertices.map(vertex => [vertex.x + traslacionX, vertex.y + traslacionY]);
-    }
-
-    // Dibujar los lados del cuadrado usando las coordenadas de los vértices trasladados
-    dibujarLineaDDA(rotatedVertices[0][0], rotatedVertices[0][1], rotatedVertices[1][0], rotatedVertices[1][1], color, size); // Lado superior
-    dibujarLineaDDA(rotatedVertices[1][0], rotatedVertices[1][1], rotatedVertices[2][0], rotatedVertices[2][1], color, size); // Lado derecho
-    dibujarLineaDDA(rotatedVertices[2][0], rotatedVertices[2][1], rotatedVertices[3][0], rotatedVertices[3][1], color, size); // Lado inferior
-    dibujarLineaDDA(rotatedVertices[3][0], rotatedVertices[3][1], rotatedVertices[0][0], rotatedVertices[0][1], color, size); // Lado izquierdo
-
-    // Llamar a la función para seleccionar la figura
-    seleccionarFigura(centerX, centerY);
-}*/
 let botonMoverAlFondoActivado = false;
 
 // Variable para almacenar si el botón de mover al frente está activado
@@ -1495,9 +1452,6 @@ let botonMoverAtrasActivado = false;
 
 // Variable para almacenar si el botón de mover hacia adelante está activado
 let botonMoverAdelanteActivado = false;
-
-
-
 
 document.getElementById('enviaratrasBtn').addEventListener('click', function() {
     botonMoverAtrasActivado =true;
@@ -1592,7 +1546,6 @@ document.getElementById('fondoBtn').addEventListener('click', function() {
      
 });
 
-
 function moverHaciaAtras() {
     // Verificar si el botón de mover hacia atrás está activado
     if (botonMoverAtrasActivado) {
@@ -1637,7 +1590,6 @@ function moverAlFondo() {
         }
     }
 }
-
 
 // Mover una figura al frente
 function moverAlFrente() {
@@ -1775,8 +1727,6 @@ function dibujarCuadrado(centerX, centerY, sideLength, color, size, anguloRotaci
     dibujarLineaDDA(rotatedX3Y3.x, rotatedX3Y3.y, rotatedX0Y0.x, rotatedX0Y0.y, color, size); // Lado izquierdo
 }
 
-
-
 function drawPixel(x, y, color, size) {
     x = Math.round(x);
     y = Math.round(y);
@@ -1818,8 +1768,6 @@ function drawPixel(x, y, color, size) {
         }
     }
 }
-
-
 
 document.getElementById('borraBtn').addEventListener('click', function() {
     // Establecer la bandera para el modo borrador
@@ -1879,8 +1827,6 @@ document.getElementById('borraBtn').addEventListener('click', function() {
     
 });
 
-
-
 // Función para verificar si un punto está dentro de un círculo
 function puntoDentroDeCirculo(x, y, centerX, centerY, radius) {
     return Math.sqrt((x - centerX) ** 2 + (y - centerY) ** 2) <= radius;
@@ -1918,7 +1864,6 @@ function puntoDentroDePoligono(x, y, radio, centerX, centerY, ladosPoligono, ang
 function puntoDentroDeRectangulo(x, y, startX, startY, width, height,anguloRotacion) {
     return x >= startX && x <= startX + width && y >= startY && y <= startY + height;
 }
-
 
 function puntoDentroDeTrapecio(x, y, startX, startY, endX, endY,anguloRotacion) {
     const topY = startY;
@@ -1989,14 +1934,12 @@ function guardarEnJSON() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'figuras.json';
+    a.download = 'dibujo paint.json';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
 }
-
-
 // Cargar desde JSON
 function cargarDesdeJSON() {
     // Crear un input de tipo archivo en el DOM
@@ -2009,6 +1952,7 @@ function cargarDesdeJSON() {
         const archivo = event.target.files[0];
         const lector = new FileReader();
 
+        
         lector.onload = function(event) {
             const contenido = event.target.result;
             const figurasJSON = JSON.parse(contenido);
@@ -2020,7 +1964,7 @@ function cargarDesdeJSON() {
             dibujarFiguras(figurasJSON);
 
             // Opcional: Actualizar el vector figurasDibujadas si es necesario
-            figurasDibujadas = figurasJSON;
+           // figurasDibujadas = figurasJSON;
         };
 
         // Leer el contenido del archivo como texto
@@ -2030,7 +1974,3 @@ function cargarDesdeJSON() {
     // Hacer clic en el input para abrir el gestor de archivos
     input.click();
 }
-
-
-
-

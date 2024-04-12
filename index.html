@@ -12,7 +12,7 @@
     
    
         <div class="todo">
-             <div class="canvasno">
+            <div class="canvasno">
 
             
                 <div class="figuras">
@@ -43,14 +43,15 @@
                     </div>
                     <div class="aver">
                         <img id="dibujarBtn" src="imagenes/lapiz.png" title="Lapiz"></img>                   
-                        <input type="range" id="volume" name="volume" min="1" max="10" value="5" title="Tamaño pincel" onchange="updateVolume(this.value)">
+                        <input type="range" id="volume" name="volume" min="1" max="10" value="3" title="Tamaño pincel" onchange="updateVolume(this.value)">
                     </div>
-                    <img id="borraBtn" src="imagenes/borrador.png" title="Borrador"></img>
+                    <img id="limpiartodo" onclick="limpiar()" src="imagenes/borrador.png"></img>
+                
                     <img id="escribirBtn" src="imagenes/ABC.png" title="escribir"></img>
                    <img id="dibujarRomboBtn" src="imagenes/rombo.png" title="Rombo"></img>
                     <img id="dibujarTrapecioBtn" src="imagenes/trapecio.png" title="Trapecio"></img>
                     <img id="dibujarCirculoBtn" src="imagenes/circulo.png" title="Circulo"></img>
-                    <img id="dibujarLineaBtn" src="imagenes/linea.png" title="Linea"></img>
+                    <img id="dibujarLineaBtn" src="imagenes/linea-diagonal.png" title="Linea"></img>
                     <img id="dibujarCuadradoBtn" src="imagenes/cuadrado.png" title="Cuadrado"></img>
                     <img id="dibujarRectanguloBtn" src="imagenes/rectangulo.png" title="Rectangulo"></img>
                     <img id="dibujarElipseBtn" src="imagenes/elipse.png" title="Elipse"></img>
@@ -61,9 +62,8 @@
      
           
             <div class="canvas">
-               <!-- <label id="limpiartodo" onclick="limpiar()">Limpiar canvas</label>-->
-                <img id="atrasBtn" src="imagenes/atras.jpg" title="Atras"></img>
-                <img id="adelanteBtn" src="imagenes/adelante.jpg" title="Adelante"></img>
+               <img id="atrasBtn" src="imagenes/deshacer.png" title="Atras"></img>
+                <img id="adelanteBtn" src="imagenes/rehacer.png" title="Adelante"></img>
                 <img id="rotarBtn" src="imagenes/rotar.png" title="Rotar figura"></img>
                 <img id="trasladarBtn" src="imagenes/mover.png" title="Trasladar figura"></img>
                 <img id="resizeBtn" src="imagenes/Escalar.png" title="escalar figura"></img>               
