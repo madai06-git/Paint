@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+        <title>Paint</title>
+
+    </head>
+    <body>
+    
+   
+        <div class="todo">
+             <div class="canvasno">
+
+            
+                <div class="figuras">
+                    <div class="dropdown" id="opcionesDropdown">
+                        <button class="dropbtn" id="opcionesBtn">Opciones</button>
+                        <div class="dropdown-content" id="opcionesContent">
+                            <label for="inputArchivo" class="custom-file-upload">
+                                <i class="fas fa-cloud-upload-alt"></i> Abrir archivo
+                            </label>
+                            <input type="file" id="inputArchivo" accept=".json" style="display: none;">
+                            <button id="guardarComoBtn" class="custom-save-button">Guardar</button>
+                            <button id="exportarBtn" class="custom-save-button">Exportar</button>
+                        </div>
+                    </div>
+            
+                    <div class="colors">
+                        <div class="color-titulo">Colores</div>
+                        <div class="colores-contenedor">
+                            <div class="img_colores">
+                                <img id="verdeBtn" src="imagenes/verde.png" title="Verde" width="40%">
+                                <img id="azulBtn" src="imagenes/azul.png" title="Azul" width="40%">
+                            </div>
+                            <div class="colores2">
+                                <img id="rojoBtn" src="imagenes/rojo.png" title="Rojo" width="40%">
+                                <img id="negroBtn" src="imagenes/negro.jpg" title="Negro" width="40%">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="aver">
+                        <img id="dibujarBtn" src="imagenes/lapiz.png" title="Lapiz"></img>                   
+                        <input type="range" id="volume" name="volume" min="1" max="10" value="5" title="Tamaño pincel" onchange="updateVolume(this.value)">
+                    </div>
+                    <img id="borraBtn" src="imagenes/borrador.png" title="Borrador"></img>
+                    <img id="escribirBtn" src="imagenes/ABC.png" title="escribir"></img>
+                   <img id="dibujarRomboBtn" src="imagenes/rombo.png" title="Rombo"></img>
+                    <img id="dibujarTrapecioBtn" src="imagenes/trapecio.png" title="Trapecio"></img>
+                    <img id="dibujarCirculoBtn" src="imagenes/circulo.png" title="Circulo"></img>
+                    <img id="dibujarLineaBtn" src="imagenes/linea.png" title="Linea"></img>
+                    <img id="dibujarCuadradoBtn" src="imagenes/cuadrado.png" title="Cuadrado"></img>
+                    <img id="dibujarRectanguloBtn" src="imagenes/rectangulo.png" title="Rectangulo"></img>
+                    <img id="dibujarElipseBtn" src="imagenes/elipse.png" title="Elipse"></img>
+                    <img id="dibujarPoligonoBtn" src="imagenes/poligono.png" title="Poligono" onclick="pedirLadosPoligono()"></img>
+                
+                </div>
+            </div>
+     
+          
+            <div class="canvas">
+               <!-- <label id="limpiartodo" onclick="limpiar()">Limpiar canvas</label>-->
+                <img id="atrasBtn" src="imagenes/atras.jpg" title="Atras"></img>
+                <img id="adelanteBtn" src="imagenes/adelante.jpg" title="Adelante"></img>
+                <img id="rotarBtn" src="imagenes/rotar.png" title="Rotar figura"></img>
+                <img id="trasladarBtn" src="imagenes/mover.png" title="Trasladar figura"></img>
+                <img id="resizeBtn" src="imagenes/Escalar.png" title="escalar figura"></img>               
+                <canvas id="canvas" width="900" height="450"></canvas>
+            </div>
+         <div class="traer">           
+                <img id="enviaratrasBtn" src="imagenes/enviaratras.png" ></img>
+                <img id="traeradelanteBtn" src="imagenes/traeradelante.png" ></img>
+                <img id="traerfrenteBtn" src="imagenes/traeralfrente.png" ></img>
+                <img id="fondoBtn" src="imagenes/fondo.png" ></img>
+            </div>
+         </div>
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+        <script src="codigo.js">
+        </script>
+    </body>
+</html>

@@ -1,0 +1,197 @@
+/* Reset de estilos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0; /* Color de fondo */
+}
+
+/* Contenedor principal */
+.todo {
+  display: flex;
+  flex-direction: row; /* Cambiado a fila para alinear horizontalmente */
+  justify-content: space-between;
+  position: relative; /* Establecer posición relativa */
+}
+
+/* Contenedor del panel de herramientas */
+.canvasno {
+  width: 20%; /* Ancho del panel de herramientas */
+  padding: 20px;
+  background-color: #fff; /* Color de fondo del panel de herramientas */
+}
+
+/* Estilos de las figuras y botones */
+.figuras {
+  display: flex;
+  flex-direction: column; /* Cambiado a columna para alinear verticalmente */
+  align-items: flex-start; /* Alinear al inicio */
+  margin-bottom: 20px;
+}
+
+/* Estilos específicos de las imágenes de figuras */
+.figuras img {
+  cursor: pointer;
+  width: 50px; /* Tamaño deseado para todas las imágenes */
+  height: auto;
+  margin-bottom: 10px;
+}
+
+
+/* Estilos del contenedor principal */
+.todo {
+  position: relative; /* Establecer posición relativa */
+}
+
+/* Estilos del dropdown */
+.dropdown {
+  position: absolute; /* Establecer posición absoluta */
+  top: 0; /* Alinear en la parte superior */
+  left: 0; /* Alinear a la izquierda */
+}
+
+/* Estilos del botón desplegable */
+.dropbtn {
+  background-color: #4CAF50; /* Color del botón */
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Estilos del contenido del dropdown */
+.dropdown-content {
+  display: none; /* Ocultar el contenido por defecto */
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Estilos de los elementos del dropdown */
+.dropdown-content button, .dropdown-content label {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Estilos para resaltar al pasar el ratón sobre los elementos del dropdown */
+.dropdown-content button:hover, .dropdown-content label:hover {
+  background-color: #f1f1f1;
+}
+
+/* Mostrar el contenido del dropdown cuando el cursor esté sobre él */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Resto del CSS sigue igual */
+.dropbtn {
+  background-color: #4CAF50; /* Color del botón de opciones */
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.colors {
+  margin-top: 20px;
+}
+
+.color-titulo {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.colores-contenedor {
+  display: flex;
+  justify-content: space-between;
+}
+
+.img_colores img {
+  cursor: pointer;
+  width: 50px; /* Tamaño deseado para todas las imágenes */
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.aver {
+  margin-top: 20px;
+}
+
+/* Estilos del contenedor del canvas */
+.canvas {
+  position: relative; /* Mantener posición relativa */
+}
+
+/* Estilos del contenedor de los botones traer */
+.traer {
+  display: flex;
+  justify-content: flex-start; /* Alinear al inicio */
+  align-items: center; /* Centrar verticalmente */
+  position: absolute; /* Establecer posición absoluta */
+  top: 0; /* Colocar en la parte superior */
+  left: 0; /* Alinear a la izquierda */
+  padding: 10px; /* Ajustar el relleno según sea necesario */
+  background-color: #fff; /* Color de fondo */
+  z-index: 0; /* Asegurar que esté detrás de .dropdown */
+}
+
+/* Estilos de los botones dentro de la clase traer */
+.traer img {
+  width: 50px;
+  height: auto;
+  margin-right: 10px; /* Espacio entre los botones de traer */
+}
+
+/* Estilos del canvas */
+canvas {
+  border: 1px solid #000; /* Borde del canvas */
+  background-color: #fff; /* Color de fondo del canvas */
+  width: 900px; /* Ancho del canvas */
+  height: 450px; /* Altura del canvas */
+}
+
+/* Estilos de los botones dentro de la clase canvas */
+.canvas img {
+  width: 50px;
+  height: auto;
+}
